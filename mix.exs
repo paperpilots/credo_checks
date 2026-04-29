@@ -1,13 +1,18 @@
 defmodule Azav.CredoChecks.MixProject do
   use Mix.Project
 
+  @source_url "https://github.com/paperpilots/credo_checks"
+
   def project do
     [
       app: :azav_credo_checks,
       version: "0.1.0",
       elixir: "~> 1.19",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      package: package(),
+      name: "AZAV Pilot CredoChecks",
+      source_url: @source_url
     ]
   end
 
@@ -22,6 +27,13 @@ defmodule Azav.CredoChecks.MixProject do
   defp deps do
     [
       {:credo, "~> 1.7"}
+    ]
+  end
+
+  def package do
+    [
+      licenses: ["MIT"],
+      links: %{"GitHub" => @source_url}
     ]
   end
 end
