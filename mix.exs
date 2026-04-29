@@ -11,6 +11,7 @@ defmodule Azav.CredoChecks.MixProject do
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       package: package(),
+      description: description(),
       name: "AZAV Pilot CredoChecks",
       source_url: @source_url
     ]
@@ -28,6 +29,10 @@ defmodule Azav.CredoChecks.MixProject do
     [
       {:credo, "~> 1.7"}
     ]
+  end
+
+  defp description() do
+    "A collection of credo checks used by AZAV Pilot to spot common errors and code quality issues."
   end
 
   def package do
